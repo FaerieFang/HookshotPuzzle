@@ -2,53 +2,20 @@
 //This Script Stores Veriales for the Transfer beetween rooms
 
 var waitTime : float;
-var whichPlayerType : System.Boolean; //true = Player, False = Boat
+var whichPlayerType : System.Boolean;
 
 var playerScript = player.GetComponent(lifeScript);
-var boatScript = boat.GetComponent(boatLifeScript);
 
 
 //Create All the GameObjects
 
-var boat : GameObject;
+
 var player : GameObject;
 	if (player != null){
 		var playerScript = player.GetComponent(lifeScript);
 	}
-	if (boat != null){
-		var boatScript = boat.GetComponent(boatLifeScript);
-	}
-/*
-if (GameObject.Find("Player") != null){
 
-}
-else {
-	playerScript = null;
-}
 
-if (GameObject.Find("Boat") != null){
-
-}
-else {
-	boatScript = null;
-}
-
-/*
-var inventory : Transform[];
-
-//Get Gameobject Components
-
-if (GameObject.Find("Player") != null){
-	//var player : GameObject;
-	//var playerScript = player.GetComponent(PlayerControl);
-	whichPlayerType = true;
-}
-if (GameObject.Find("Boat") != null){
-	//var boat : GameObject;
-	//var boatScript = boat.GetComponent(BoatControl);
-	whichPlayerType = false;
-}
-*/
 
 //var we need the inventory
 
@@ -67,23 +34,12 @@ function Update () {
 	if (player != null){
 		playerScript = player.GetComponent(lifeScript);
 	}
-	if (boat != null){
-		boatScript = boat.GetComponent(boatLifeScript);
-	}
+
 	
 	if (GameObject.Find("Player") != null){
 		player = GameObject.Find("Player");
-		boat = null;
-		boatScript = null;
 		playerScript = player.GetComponent(lifeScript);
 		whichPlayerType = true;
-	}
-	else if (GameObject.Find("Boat") != null){
-		boat = GameObject.Find("Boat");
-		player = null;
-		playerScript = null;
-		boatScript = boat.GetComponent(boatLifeScript);
-		whichPlayerType = false;
 	}
 
 }
