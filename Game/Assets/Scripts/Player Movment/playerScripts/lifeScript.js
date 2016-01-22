@@ -11,8 +11,6 @@ public var lifeCount : int;
 function Start () {
 	controler = GameObject.Find("Controler");
 	yield WaitForSeconds (0.01);
-	maxLife = controler.GetComponent(veriableScript).maxLife;
-	lifeCount = controler.GetComponent(veriableScript).lifeCount;
 }
 
 function Update () {

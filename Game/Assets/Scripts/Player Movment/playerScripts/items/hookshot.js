@@ -72,14 +72,12 @@ function Update () {
 			dir = 3;
 		}	
 	}
-	
 }
 function FixedUpdate () {
 		yArray.Push(transform.position);
 		if (!first){
 			var clone : GameObject;
 			clone = Instantiate(prefab, transform.position, transform.rotation);
-			
 		}
 
 }

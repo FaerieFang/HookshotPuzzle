@@ -42,13 +42,18 @@ function GoBack () {
 	goBack = true;
 	Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
 	GetComponent(hookshot).enabled = false;
-	yield WaitForSeconds (0.1);
+	//yield WaitForSeconds (0.1);
 	for (var i = GetComponent(hookshot).yArray.length-1; i > 0; i--) {
 		transform.position = GetComponent(hookshot).yArray[i];
 		yield WaitForSeconds (0.0000001);
 	}
 }
 function OnTriggerEnter2D (coll: Collider2D){
+	if (goBack && coll.gameObject.name == "HookTrail(Clone)"){
+		Destroy (coll.gameObject);
+	}
+}
+function OnTriggerStay2D (coll: Collider2D){
 	if (goBack && coll.gameObject.name == "HookTrail(Clone)"){
 		Destroy (coll.gameObject);
 	}
