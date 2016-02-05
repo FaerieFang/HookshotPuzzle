@@ -10,6 +10,8 @@ var activate : KeyCode;
 
 //pushing
 var pullBlock : GameObject;
+
+
 var pullPos : System.Boolean;
 var controler : GameObject;
 
@@ -98,7 +100,7 @@ function Update () {
 	}
 	if (Input.GetKeyUp(activate)){
 			pullBlock.GetComponent(pullBlockScript).pull = false;
-			speed = 5;
+			speed = 7;
 	}
 	
 
@@ -112,6 +114,7 @@ function Attack(){
 function OnCollisionEnter2D (coll: Collision2D) {
 	//pulling blocks
 	if (coll.gameObject.tag == "CanPress"){
+		pullBlock = coll.gameObject;
 		pullPos = true;
 	}
 }
