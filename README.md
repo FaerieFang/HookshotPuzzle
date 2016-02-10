@@ -8,3 +8,7 @@ Puzzle Game using Hookshot
 
 - Make the hookshot line destroy right
 - Make the player Rotate and the hookshot spawn acordingly
+
+<h4> Puzzle Objects </h4>
+
+- Fix button to account for more than 1 box
