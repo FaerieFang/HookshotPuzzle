@@ -12,3 +12,10 @@ Puzzle Game using Hookshot
 <h4> Puzzle Objects </h4>
 
 - Fix button to account for more than 1 box
+
+<h3> Controls </h3>
+
+- Wasd to move
+- Hold Space to pull blocks
+- Press Q to toggle camera lock
+- E to fire hookshot
