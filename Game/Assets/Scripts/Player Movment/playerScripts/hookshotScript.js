@@ -6,6 +6,7 @@ public var contEnabled : System.Boolean = true;
 var hookshotPrefab : GameObject;
 var fireHook : KeyCode;
 var vArray = new Array();
+var canDestroy : System.Boolean = false;
 
 function Start () {
 
@@ -15,6 +16,7 @@ function Update () {
 	//Hookshot Update
 	if (Input.GetKeyDown(fireHook)){
 		Hookshot();
+		canDestroy = false;
 		GetComponent.<Rigidbody2D>().velocity.x = 0;
 		GetComponent.<Rigidbody2D>().velocity.y = 0;
 	}
@@ -30,7 +32,7 @@ function Hookshot (){
 		clone = Instantiate(hookshotPrefab, transform.position, transform.rotation);
 		clone.GetComponent(hookshot).first = false;
 		clone.GetComponent(hookshotTwo).first = false;
-		Physics2D.IgnoreCollision(clone.GetComponent.<Collider2D>(), GetComponent.<Collider2D>());
+		Physics2D.IgnoreCollision(clone.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), true);
 	}
 }
 
@@ -41,11 +43,13 @@ function GoToHookshot (){
 		transform.position = vArray[i];
 		yield WaitForSeconds (0.0000001);
 	}
+	canDestroy = true;
 	contEnabled = true;
 }
 
 function OnTriggerEnter2D (coll: Collider2D){
 	if (coll.gameObject.name == "HookTrail(Clone)"){
+		yield WaitForSeconds (0.0001);
 		Destroy (coll.gameObject);
 	}
 }

@@ -15,11 +15,11 @@ function OnCollisionEnter2D (coll: Collision2D) {
 			yield WaitForSeconds (0.01);
 			player.SendMessage("GoToHookshot");
 			GetComponent(hookshot).enabled = false;
-			Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
+			//Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
 		}
 	}
 	if (coll.gameObject == player){
-		yield WaitForSeconds (0.02);
+		//yield WaitForSeconds (0.0001);
 		if (canDestroy){
 			player.GetComponent(hookshotScript).contEnabled = true;
 			Destroy (this.gameObject);
@@ -40,7 +40,7 @@ function Start (){
 
 function GoBack () {
 	goBack = true;
-	Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
+	//Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
 	GetComponent(hookshot).enabled = false;
 	//yield WaitForSeconds (0.1);
 	for (var i = GetComponent(hookshot).yArray.length-1; i > 0; i--) {
@@ -66,4 +66,9 @@ function Update () {
 	else {
 		canDestroy = false;
 	}
+	
+	if (canDestroy){
+		Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), false);
+	}
+	
 }

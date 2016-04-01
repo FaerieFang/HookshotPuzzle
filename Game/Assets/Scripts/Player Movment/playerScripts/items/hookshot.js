@@ -15,6 +15,7 @@ var yArray = new Array ();
 
 
 function Start () {
+	Physics2D.IgnoreCollision(player.GetComponent.<Collider2D>(), GetComponent.<Collider2D>(), true);
 	yArray.Clear();
 	dir = 1;
 	if (first){
@@ -81,7 +82,7 @@ function FixedUpdate () {
 		}
 
 }
-function OnCollisionEnter2D (coll: Collision2D) {
+function OnCollisionStay2D (coll: Collision2D) {
 	if (coll.gameObject.tag == "Obs"){
 		//xArray.Push(transform.position);
 		transform.position = transform.position;
