@@ -18,31 +18,31 @@ function Update () {
 
 	 if (Input.GetKeyDown(pauseKey)) {
 		paused = !paused;
-		/*
+		
 		if (paused){
 			Time.timeScale = 0;
 		}
 		else{
 			Time.timeScale = 1;
 		}
-		*/
+		
 	}
 }
 
- function OnGUI () {
+function OnGUI () {
  
- 	//In Game GUI
- 	//if (GUI.Button (Rect (Screen.width - 70,5,60,20), "Pause")) {
-	//	paused = !paused;
-		/*
+	//In Game GUI;
+	if (GUI.Button (Rect (Screen.width - 70,5,60,20), "Pause")) {
+		paused = !paused;
+		
 		if (paused){
 			Time.timeScale = 0;
 		}
 		else{
 			Time.timeScale = 1;
 		}
-		*/
-//	}
+		
+}
 	
 
  
@@ -55,7 +55,7 @@ function Update () {
 	 
 	    // Make the first button
 	    if (MiniMap.GetComponent(camScript).mEnabled){
-	    	if (GUI.Button (Rect (20,40,130,20), "MiniMap Off")) {
+	    	if (GUI.Button (Rect (20,40,130,20), "Minimap Off")) {
 	    		MiniMap.GetComponent(camScript).mEnabled = !MiniMap.GetComponent(camScript).mEnabled;
 	    	}
 	    }

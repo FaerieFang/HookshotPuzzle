@@ -37,8 +37,8 @@ function OnCollisionEnter2D (coll: Collision2D) {
 
 }
 function OnGUI (){
-	GUI.DrawTexture(Rect(Screen.width - 70,5,20,20), lifeSprite);
-	GUI.Label(Rect(Screen.width - 64,4,20,20), lifeCount.ToString());
+	GUI.DrawTexture(Rect(Screen.width - 90,5,20,20), lifeSprite);
+	GUI.Label(Rect(Screen.width - 84,5,20,20), lifeCount.ToString());
 }
 
 function Death (){

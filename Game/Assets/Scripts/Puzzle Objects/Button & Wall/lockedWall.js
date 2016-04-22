@@ -24,7 +24,6 @@ function Open(){
 			transform.position.x = transform.position.x + .1;
 		}
 		yield WaitForSeconds(0.01);
-		//i += 1;
 		moved += 1;
 	}
 }
@@ -39,7 +38,6 @@ function Close(){
 			transform.position.x = transform.position.x - .1;
 		}
 		yield WaitForSeconds(0.01);
-		//i += 1;
 		moved -= 1;
 	}
 
