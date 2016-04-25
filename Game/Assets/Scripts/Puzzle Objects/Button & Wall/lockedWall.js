@@ -4,15 +4,6 @@ var virtical : System.Boolean;
 var button : GameObject;
 var moved : int = 0;
 
-function Start () {
-
-}
-
-function Update () {
-
-}
-
-
 
 function Open(){
 
