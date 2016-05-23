@@ -17,6 +17,7 @@ Puzzle Game using Hookshot
 - Make the player Rotate and the hookshot spawn acordingly
 
 <h4> Puzzle Objects </h4>
-
+- Save the save point in playerPrefs
+- Program falling in pits
 
 
