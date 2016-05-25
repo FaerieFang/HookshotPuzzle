@@ -10,6 +10,7 @@ Puzzle Game using Hookshot
 
 
 <h3> TO-DO </h3>
+- Make camera relitive to player when player is about to leave veiw, not just follow
 
 <h4> Hookshot </h4>
 
