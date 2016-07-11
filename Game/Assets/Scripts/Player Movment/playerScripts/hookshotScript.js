@@ -7,6 +7,7 @@ var hookshotPrefab : GameObject;
 var fireHook : KeyCode;
 var vArray = new Array();
 var canDestroy : System.Boolean = false;
+public var cloneDest : System.Boolean = false;
 
 function Start () {
 
@@ -28,6 +29,8 @@ function Update () {
 function Hookshot (){
 	if (contEnabled){
 		contEnabled = false;
+		cloneDest = false;
+		canDestroy = false;
 		var clone : GameObject;
 		clone = Instantiate(hookshotPrefab, transform.position, transform.rotation);
 		clone.GetComponent(hookshot).first = false;
@@ -38,19 +41,23 @@ function Hookshot (){
 
 function GoToHookshot (){
 	var realHook : GameObject = GameObject.Find("Hookshot(Clone)");
+	cloneDest = true;
+	realHook.GetComponent(hookshotTwo).canDestroy = true;
+	yield WaitForSeconds (0.01);
 	vArray = realHook.GetComponent(hookshot).yArray;
 	for (var i = 0; i < vArray.length; i++) {
 		transform.position = vArray[i];
-		yield WaitForSeconds (0.0000001);
+		yield WaitForSeconds (0.00001);
 	}
 	canDestroy = true;
 	contEnabled = true;
 }
 
-function OnTriggerEnter2D (coll: Collider2D){
+function OnTriggerStay2D (coll: Collider2D){
 	if (coll.gameObject.name == "HookTrail(Clone)"){
-		yield WaitForSeconds (0.0001);
-		Destroy (coll.gameObject);
+		if (cloneDest == true){
+			Destroy (coll.gameObject);
+		}
 	}
 }
 //End Hookshot functions
