@@ -21,4 +21,7 @@ Puzzle Game using Hookshot
 - Save the save point in playerPrefs
 - Program falling in pits
 
+<h3> Known Bugs </h3>
+- Pulling a block will break if touching another block (store names before checking for pull)
+
 
