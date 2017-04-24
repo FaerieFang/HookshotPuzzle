@@ -52,13 +52,12 @@ function Update () {
 	}
 
 }
-/*
-function OnCollisonEnter2D (coll 	: Collider2D) {
-	Debug.Log ("test");
-	if (coll.gameObject.tag == "Obs"){
-		
-		GetComponent.<Rigidbody2D>().velocity.y = GetComponent.<Rigidbody2D>().velocity.y *-1;
-		GetComponent.<Rigidbody2D>().velocity.x = GetComponent.<Rigidbody2D>().velocity.x *-1;
+
+function OnCollisonEnter2D (coll : Collider2D) {
+	if (!vertical){
+		GetComponent.<Rigidbody2D>().velocity.x = speed * -1;
+	}
+	else {
+		GetComponent.<Rigidbody2D>().velocity.y = speed * -1;
 	}
 }
-*/
